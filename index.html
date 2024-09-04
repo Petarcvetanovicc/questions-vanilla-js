@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="questions-container">
+      <h1>Questions</h1>
+      <div class="single-question">
+        <div class="question-title">
+          <p>Do You Accept All Major Credit Cards?</p>
+          <button>
+            <span class="plus-icon"><i class="fa-solid fa-plus"></i></span>
+            <span class="minus-icon"><i class="fa-solid fa-minus"></i></span>
+          </button>
+        </div>
+        <div class="question-text">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum id
+            officia suscipit maiores nam architecto quo commodi inventore ullam
+            quam?
+          </p>
+        </div>
+      </div>
+      <div class="single-question">
+        <div class="question-title">
+          <p>Do You Use Organic Ingredients?</p>
+          <button>
+            <span class="plus-icon"><i class="fa-solid fa-plus"></i></span>
+            <span class="minus-icon"><i class="fa-solid fa-minus"></i></span>
+          </button>
+        </div>
+        <div class="question-text">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum id
+            officia suscipit maiores nam architecto quo commodi inventore ullam
+            quam?
+          </p>
+        </div>
+      </div>
+      <div class="single-question">
+        <div class="question-title">
+          <p>Do You Support Local Farmers?</p>
+          <button>
+            <span class="plus-icon"><i class="fa-solid fa-plus"></i></span>
+            <span class="minus-icon"><i class="fa-solid fa-minus"></i></span>
+          </button>
+        </div>
+        <div class="question-text">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum id
+            officia suscipit maiores nam architecto quo commodi inventore ullam
+            quam?
+          </p>
+        </div>
+      </div>
+    </div>
+    <script>
+      let btns = document.querySelectorAll('button')
+      let questions = document.querySelectorAll('.question')
+      let icons = document.querySelectorAll('button i')
+
+      btns.forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          const question = e.currentTarget.parentElement.parentElement
+
+          questions.forEach(function (item) {
+            if (item !== question) {
+              item.classList.remove('show-text')
+            }
+          })
+
+          question.classList.toggle('show-text')
+        })
+      })
+    </script>
+  </body>
+</html>
